@@ -1,0 +1,83 @@
+id: azorult-hunter
+
+info:
+  name: azor c&c finder
+  author: dorkerdevil
+  description: shell finder for azorult stealer malware
+  tags: shell
+
+requests:
+  - payloads: #set your shell/payload location
+      shell: /home/<user>/Desktop/azor_shell.txt
+      list: /home/<user>/Desktop/com.txt
+
+    raw:
+      - |+
+        GET /§list§/Panel/panel/§shell§ HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /§list§/Panel/panel/§shell§ HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /§list§/§shell§ HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /§shell§ HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /path/§shell§ HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /§list§/panel/§shell§
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /dashboard/§shell§
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /§list§/backup/§shell§
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+
+        GET /8407/§shell§
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+  
+        GET /h4y/§shell§
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+      - |+  
+        GET /§list§/§list§/§shell§
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+        Connection: close
+
+    attack: clusterbomb
+    redirects: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<center>Guest stat</center>"
+          - "Password"
+        condition: or
+        part: body
+      - type: status
+        status:
+          - 200
