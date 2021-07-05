@@ -4,7 +4,7 @@ id: azorult-hunter
 info:
   name: azor c&c finder
   author: dorkerdevil/subhajitsaha0x
-  description: shell finder for azorult stealer malware
+  description: c&c panel finder for azorult stealer malware
   tags: shell
 
 requests:
