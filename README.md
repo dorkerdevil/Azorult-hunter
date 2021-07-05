@@ -1,26 +1,40 @@
 # Azorult-Hunter
-Azorult C&amp;C Hunter with bash onliner and nuclei yaml rule.
 
-#Requirements
-1. nuclei.
-2. httprobe.
+Azorult C&amp;C Hunter is a threat detection tool written in bash onliner and nuclei YAML rule.
 
-#Tutorial
-Note:- run the below in your terminal.
+## Requirements
 
+Find the installation steps in their documentation
+
+1. [Nuclei](https://github.com/projectdiscovery/nuclei)
+2. [Httprobe](https://github.com/tomnomnom/httprobe)
+
+
+## Usage
+
+```bash
+# Fetch IPs from Azorult-Tracker
 curl -X GET "https://azorult-tracker.net/api/ip/" -H "accept: application/json" | tee -a azor.txt; cat azor.txt | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | tee -a fil_azor.txt; cat fil_azor.txt | ./httprobe | tee -a probed_azor.txt
 
-./nuclei -t azorult-detect.yaml -l probed_azor.txt -v | tee -a azor_out.txt
+#  For Output 
+./nuclei -t azorult-detect.yaml -l probed_azor.txt -v | tee -a /azor_out.txt
 
-Now, change the path of the shell and location wordlist in the .yaml file
+# Make Sure to change the path of the shell and location of the wordlist in the .yaml file
 
      shell: /home/<user>/Desktop/azor_shell.txt
       list: /home/<user>/Desktop/com.txt
 
-#Read
-Note: - "This is just a random experiment with nuclei yaml rule to detect azorult C&C , we don't take responsibilities of the damages done with this"
+# Path lists will be updated frequently !!
+```
 
-#Credit
-1. D0rkerDevil - https://twitter.com/D0rkerDevil          
-2. SubhajitSaha0x
+## Authors
+• [D0rkerDevil](https://twitter.com/D0rkerDevil) 
 
+• [SubhajitSaha0x](https://www.linkedin.com/in/subhajitsaha0x/)
+
+Please make sure to give credits to authors if you are using this.
+
+ This is for educational purposes, Authors are not responsible for any damages.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
