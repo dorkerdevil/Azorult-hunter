@@ -1,5 +1,5 @@
-# Azorult-hunter
-Azorult C&amp;C hunter with bash onliner and nuclei yaml rule.
+# Azorult-Hunter
+Azorult C&amp;C Hunter with bash onliner and nuclei yaml rule.
 
 #Requirements
 1. nuclei.
