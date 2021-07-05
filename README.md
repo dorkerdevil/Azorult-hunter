@@ -1,6 +1,7 @@
 # Azorult-Hunter
 
 Azorult C&amp;C Hunter is a threat detection tool written in bash onliner and nuclei YAML rule.
+Note - you can use it with your own ip range / personal scans not just dependent on the api.
 
 ## Requirements
 
@@ -22,7 +23,7 @@ curl -X GET "https://azorult-tracker.net/api/ip/" -H "accept: application/json" 
 # Make Sure to change the path of the shell and location of the wordlist in the .yaml file
 
      shell: /home/<user>/Desktop/azor_shell.txt
-      list: /home/<user>/Desktop/com.txt
+      list: /home/<user>/Desktop/com.txt      
 
 # Path lists will be updated frequently !!
 ```
@@ -35,6 +36,6 @@ curl -X GET "https://azorult-tracker.net/api/ip/" -H "accept: application/json" 
 Please make sure to give credits to authors if you are using this.
 
  This is for educational purposes, Authors are not responsible for any damages.
-
+ 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
