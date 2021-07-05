@@ -1,7 +1,7 @@
 # Azorult-Hunter
 
 Azorult C&amp;C Hunter is a threat detection tool written in bash onliner and nuclei YAML rule.
-Note - you can use it with your own ip range / personal scans not just dependent on the api.
+You can use it with your own ip range / personal scans not just dependent on the Api.
 
 ## Requirements
 
