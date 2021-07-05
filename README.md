@@ -12,6 +12,11 @@ curl -X GET "https://azorult-tracker.net/api/ip/" -H "accept: application/json" 
 
 ./nuclei -t ~/Desktop/azorult-detect.yaml -l ~/Desktop/probed_azor.txt -v | tee -a ~/Desktop/azor_out.txt
 
+Now, change the path of the shell and location wordlist in the .yaml file
+
+     shell: /home/<user>/Desktop/azor_shell.txt
+      list: /home/<user>/Desktop/com.txt
+
 #Read
 Note: - "This is just a random experiment with nuclei yaml rule to detect azorult C&C , we don't take responsibilities of the damages done with this"
 
