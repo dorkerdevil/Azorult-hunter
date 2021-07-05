@@ -12,7 +12,7 @@ curl -X GET "https://azorult-tracker.net/api/ip/" -H "accept: application/json" 
 
 ./nuclei -t ~/Desktop/azorult-detect.yaml -l ~/Desktop/probed_azor.txt -v | tee -a ~/Desktop/azor_out.txt
 
-#Please Note
+#Please Note.
 Note: - "This is just a random experiment with nuclei yaml rule to detect azorult C&C , we don't take responsibilities of the damages done with this"
 
 #Credit
